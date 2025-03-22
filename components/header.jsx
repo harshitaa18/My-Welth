@@ -7,7 +7,7 @@ import { LayoutDashboard, PenBox } from "lucide-react";
 const Header = () => {
   return (
     <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b shadow-sm">
-      <nav className="container px-3 py-3 flex justify-between">
+      <nav className="container px-3 py-3 flex mx-auto justify-between">
         {/* Logo */}
         <Link href="/">
           <Image
@@ -19,7 +19,7 @@ const Header = () => {
           />
         </Link>
 
-        <div className="ml-auto flex items-center gap-4">
+        <div className="flex items-center gap-4">
             <SignedIn>
                 <Link href={"/dashboard"} className="text-gray-600 hover:text-blue-600 flex items-center gap-2">
                     <Button variant="outline">
