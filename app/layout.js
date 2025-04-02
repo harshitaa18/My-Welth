@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         </main>
         <Toaster richColors />
         <footer className=" py-12">
-          <div className="container mx-auto px-4 text-center text-grey-600">
+          <div className="container mx-auto px-4 text-center text-grey-600 ">
             <p>Made by Harshita Sharma :)</p>
           </div>
         </footer>
