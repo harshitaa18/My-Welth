@@ -41,9 +41,6 @@ const Hero = () => {
                 <Link href="/dashboard">
                     <Button size="lg" className="px-8">Get Started</Button>
                 </Link>
-                <Link href="/">
-                    <Button size="lg" variant="outline" className="px-8">Watch Demo</Button>
-                </Link>
             </div>
         </div>
         <div  className="hero-image-wrapper mt-5 md:mt-0">
