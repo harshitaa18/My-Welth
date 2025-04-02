@@ -9,8 +9,8 @@ const Header = async() => {
   await checkUser();
   
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 border-b shadow-sm">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
+      <nav className="container mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
@@ -25,14 +25,14 @@ const Header = async() => {
         {/* Navigation Actions */}
         <div className="flex items-center gap-4">
           <SignedIn>
-            <Link href="/dashboard">
-              <Button variant="outline" className="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+            <Link href="/dashboard" className="flex items-center gap-2 text-gray-700 hover:text-blue-600">
+              <Button variant="outline" >
                 <LayoutDashboard size={18} />
                 <span className="hidden md:inline">Dashboard</span>
               </Button>
             </Link>
             <Link href="/transaction/create">
-              <Button className="flex items-center gap-2 bg-blue-600 text-white hover:bg-blue-700">
+              <Button className="flex items-center gap-2 ">
                 <PenBox size={18} />
                 <span className="hidden md:inline">Add Transaction</span>
               </Button>
@@ -41,11 +41,7 @@ const Header = async() => {
 
           <SignedOut>
             <SignInButton forceRedirectUrl="/dashboard">
-              <Button 
-                  variant="outline" 
-                  className="px-5 py-2 text-lg border border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600">
-                  Login
-              </Button>
+              <Button variant="outline">Login</Button>
             </SignInButton>
           </SignedOut>
 
