@@ -2,9 +2,7 @@ import Hero from "@/components/hero";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   featuresData,
-  howItWorksData,
-  statsData,
-  testimonialsData,
+  howItWorksData
 } from "@/data/landing";
 
 export default function Home() {

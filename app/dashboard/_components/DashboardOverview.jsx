@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import {
   PieChart,
   Pie,
@@ -33,9 +33,14 @@ const COLORS = [
 ];
 
 export function DashboardOverview({ accounts, transactions }) {
-  const [selectedAccountId, setSelectedAccountId] = useState(
-    accounts.find((a) => a.isDefault)?.id || accounts[0]?.id
-  );
+  const [selectedAccountId, setSelectedAccountId] = useState(null);
+
+  useEffect(() => {
+    if (accounts.length > 0 && !selectedAccountId) {
+      const defaultAccount = accounts.find((a) => a.isDefault) || accounts[0];
+      setSelectedAccountId(defaultAccount.id);
+    }
+  }, [accounts, selectedAccountId]);
 
   // Filter transactions for selected account
   const accountTransactions = transactions.filter(
