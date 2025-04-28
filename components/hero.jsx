@@ -1,14 +1,19 @@
 "use client";
 
-import React,{ useEffect, useRef } from "react";
+import React,{ useEffect, useRef, useState, useTransition } from "react";
 import { Button } from './ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
 
 const Hero = () => {
-
+    const [loading, setLoading] = useState(false);
     const imageRef = useRef(null);
-
+    const handleClick = () => {
+      setLoading(true); // Set loading state to true
+      setTimeout(() => {
+        setLoading(false); // Reset loading state after operation
+      }, 1000); // Simulate a delay (you can adjust or remove this)
+    };
     useEffect(() => {
       const imageElement = imageRef.current;
   
@@ -39,7 +44,7 @@ const Hero = () => {
             </p>
             <div className="flex justify-center space-x-4 mb-4">
                 <Link href="/dashboard">
-                    <Button size="lg" className="px-8">Get Started</Button>
+                    <Button  disabled={loading} onClick={handleClick }size="lg" className="px-8"> {loading ? 'Loading...' : 'Get Started'} </Button>
                 </Link>
             </div>
         </div>

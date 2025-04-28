@@ -21,11 +21,14 @@ export default function RootLayout({ children }) {
         {children}
         </main>
         <Toaster richColors />
-        <footer className=" py-12">
-          <div className="container mx-auto px-4 text-center text-grey-600 ">
-            <p>Made by Harshita Sharma :)</p>
+        <footer className="py-8 bg-blue-100">
+          <div className="container mx-auto px-6 text-center">
+            <p className="text-gray-700 text-lg font-medium">
+              Made with by <span className="text-black font-semibold">Harshita Sharma</span> :)
+            </p>
           </div>
         </footer>
+
       </body>
     </html>
   </ClerkProvider>  
